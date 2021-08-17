@@ -2,9 +2,13 @@ package com.digifreneur.logiman.backendsvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@Controller
 @SpringBootApplication
 public class BackendsvcApplication {
 
@@ -12,11 +16,9 @@ public class BackendsvcApplication {
 		SpringApplication.run(BackendsvcApplication.class, args);
 	}
 
-	@RestController
-	class RandomResource {
-		@GetMapping(path = "/greet")
-		public String greet() {
-			return String.format("%s says Hello from %s!", "Spring Boot", "Heroku");
-		}
+	@RequestMapping("/")
+	@ResponseBody
+	String home() {
+		return "Hello World!";
 	}
 }
