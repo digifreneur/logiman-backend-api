@@ -27,7 +27,7 @@ public class SwaggerConfig {
     }
     private ApiInfo metaData() {
         return new ApiInfo(
-            "MS Posts : Spring Boot REST API",
+            "MS Posts : Spring Boot REST APIs",
             "Spring Boot REST API for Logistics management",
             "1.0",
             "Terms of service",
